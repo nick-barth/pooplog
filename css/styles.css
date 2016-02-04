@@ -1,0 +1,33 @@
+html {
+  background-color:#fefec8;
+}
+body {
+  background-color:#fefec8;
+}
+
+.container {
+  background-color:#fefec8;
+  color:#593001;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.titled{
+  text-align:center;
+  font-size:128px;
+  font-weight:bold;
+}
+.sub-titled{
+  text-align:center;
+  font-size:34px;
+  font-weight:bold;
+}
+.quick-nums{
+  text-align:center;
+}
+.big-num{
+  font-size:84px;
+  font-weight:bold;
+}
+.big-num-text{
+  font-size:28px;
+}
