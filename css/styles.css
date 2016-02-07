@@ -4,6 +4,10 @@ html {
 body {
   background-color:#fefec8;
 }
+h1{
+  text-align:center;
+  font-size:48px;
+}
 
 .container {
   background-color:#fefec8;
@@ -30,4 +34,7 @@ body {
 }
 .big-num-text{
   font-size:28px;
+}
+.notes{
+  font-size:24px;
 }
