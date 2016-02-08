@@ -240,6 +240,7 @@ $(document).ready(function() {
             data1: 'Poops Per Month',
             data2: 'Average Consistancy',
           },
+          categories: ['January', 'February','March','April','May','June','July','August','Steptember','October','November','December'],
           unload:['data3', 'data4']
         });
         monthly_chart.axis.labels({y2: 'Poops Per Month'});
