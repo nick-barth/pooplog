@@ -76,41 +76,46 @@ $(document).ready(function() {
   });
 
   var monthly_chart = c3.generate({
-      bindto: '#chart',
+      bindto: '#monthly_chart',
       data: {
         columns: [
-          ['data1', 30, 200, 100, 400, 150, 250],
-          ['data2', 50, 20, 10, 40, 15, 25]
+          ['data1', 53, 48, 48, 49, 38, 42, 37, 35, 45, 39, 41, 40],
+          ['data2', 3.6, 3.4, 3.9, 3.8, 3.5, 3.8, 3.9, 4.1, 4, 4.4, 3.8, 3.9]
         ],
         colors: {
-          data2: '#F5DEB3',
-          data1: '#593001',
+          data2: '#814F16',
+          data1: '#AD8E3B',
         },
         axes: {
-          data2: 'y2'
+          data2: 'y2',
         },
         types: {
-          data2: 'bar'
+          data1: 'bar'
+        },
+        names: {
+          data1: 'Poops Per Month',
+          data2: 'Average Consistancy',
         }
       },
       axis: {
         y: {
           label: {
-            text: 'Y Label',
+            text: 'Total Poops',
             position: 'outer-middle'
           },
-          tick: {
-            format: d3.format("$,") // ADD
-          }
         },
         y2: {
           show: true,
           label: {
-            text: 'Y2 Label',
+            text: 'Average Consitancy',
             position: 'outer-middle'
           }
+        },
+        x: {
+            type: 'category',
+            categories: ['January', 'February','March','April','May','June','July','August','Steptember','October','November','December']
+          }
         }
-      }
   });
   var per_day_pie = c3.generate({
     bindto: '#pie2',
@@ -187,5 +192,63 @@ $(document).ready(function() {
         }
       }
     });
+
+    $( ".month-day" ).change(function() {
+      if ($('.month-day').val() == 'day'){
+         monthly_chart.load({
+           columns:[
+               ['data3', 79, 77, 71, 89, 72, 64, 63],
+               ['data4', 3.7, 3.8, 3.9, 3.7, 3.8, 3.8, 4.1]
+           ],
+           axes: {
+             data4: 'y2',
+           },
+           types: {
+             data3: 'bar',
+           },
+           colors: {
+             data4: '#814F16',
+             data3: '#AD8E3B',
+           },
+           categories :  ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+
+           unload: ['data1', 'data2']
+         });
+        monthly_chart.axis.labels({y2: 'Poops Per Day'});
+        monthly_chart.data.names({data3: 'Poops Per Day', data4: 'Average Consistancy'});
+        $('.2a').hide();
+        $('.2b').show();
+
+
+      } else {
+        monthly_chart.load({
+          columns: [
+            ['data1', 53, 48, 48, 49, 38, 42, 37, 35, 45, 39, 41, 40],
+            ['data2', 3.6, 3.4, 3.9, 3.8, 3.5, 3.8, 3.9, 4.1, 4, 4.4, 3.8, 3.9]
+          ],
+          colors: {
+            data2: '#814F16',
+            data1: '#AD8E3B',
+          },
+          axes: {
+            data2: 'y2',
+          },
+          types: {
+            data1: 'bar'
+          },
+          names: {
+            data1: 'Poops Per Month',
+            data2: 'Average Consistancy',
+          },
+          unload:['data3', 'data4']
+        });
+        monthly_chart.axis.labels({y2: 'Poops Per Month'});
+        monthly_chart.data.names({data1: 'Poops Per Month', data2: 'Average Consistancy'});
+        $('.2b').hide();
+        $('.2a').show();
+      }
+
+    });
+
 
 });

@@ -38,3 +38,11 @@ h1{
 .notes{
   font-size:24px;
 }
+.chart-dropdown{
+  font-size:34px;
+  text-align:center;
+}
+.month-day{
+  margin:auto;
+  width:150px;
+}
