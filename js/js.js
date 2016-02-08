@@ -1,3 +1,4 @@
+//function for counting numbers, thanks stackoverflow
 (function($) {
     $.fn.countTo = function(options) {
         // merge the default plugin settings with the custom options
@@ -127,7 +128,7 @@ $(document).ready(function() {
       pattern: ['#594101', '#AD8E3B', '#814F16','#477187', '#684F91', '#AA9D39']
     },
     donut: {
-        title: "Poops Per Day",
+        title: "1b. Poops Per Day",
         label: {
           format: function (value, ratio, id) {
             return d3.format('s')(value);
@@ -178,7 +179,7 @@ $(document).ready(function() {
       pattern: ['#594101', '#AD8E3B', '#814F16','#477187', '#684F91', '#AA9D39', ]
     },
     donut: {
-        title: "Poops by Location",
+        title: "1a. Poops by Location",
         label: {
           format: function (value, ratio, id) {
             return d3.format('s')(value);
