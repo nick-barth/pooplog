@@ -46,7 +46,18 @@
     };
 })(jQuery);
 
+function UncheckAll(){
+      var w = document.getElementsByTagName('input');
+      for(var i = 0; i < w.length; i++){
+        if(w[i].type=='checkbox' && w[i].value != 'total'){
+          w[i].checked = false;
+        }
+      }
+  }
+
 $(document).ready(function() {
+
+  UncheckAll();
 
   $('.timer').countTo({
           from: 0,
@@ -247,104 +258,73 @@ $(document).ready(function() {
         $('.2a').show();
       }
     });
-// RADAR CHART
-var w = 425,
-	h = 425;
 
-//Data
-var d = [
-		  [
-      {axis:"0",value:4},
-      {axis:"23",value:10},
-      {axis:"22",value:16},
-      {axis:"21",value:16},
-      {axis:"20",value:24},
-      {axis:"19",value:18},
-      {axis:"18",value:6},
-      {axis:"17",value:10},
-      {axis:"16",value:19},
-      {axis:"15",value:25},
-      {axis:"14",value:31},
-      {axis:"13",value:40},
-      {axis:"12",value:44},
-      {axis:"11",value:72},
-      {axis:"10",value:93},
-      {axis:"9",value:63},
-      {axis:"8",value:10},
-      {axis:"7",value:0},
-      {axis:"6",value:2},
-      {axis:"5",value:0},
-      {axis:"4",value:2},
-      {axis:"3",value:0},
-      {axis:"2",value:1},
-      {axis:"1",value:8},
-		  ]
-		];
+    $(".checkbox").change(function() {
+      var count = 0;
+      var w = document.getElementsByTagName('input');
+      for(var i = 0; i < w.length; i++){
+        if(w[i].type=='checkbox' && w[i].checked){
+          count++;
+        }
+      }
+      if (count == 1){
+        $('.checkbox:checked').addClass('disabled');
+      }
 
-//Options for the Radar chart, other than default
-var mycfg = {
-  w: w,
-  h: h,
-  maxValue: 100,
-  levels: 5,
-  ExtraWidthX: 300,
-  color: function() {}
-}
+      if (this.value == 'weekday')
+      {
+        if (this.checked){
+        timebar.load({
+          columns: [
+            ['data2', 3, 4, 1, 0, 1, 0, 1, 0, 9, 61, 86, 53, 23, 28, 15, 17, 12, 6, 2, 13, 20, 11, 14, 7]
+          ],
+        });
+      } else {
+        timebar.unload({
+          ids: ['data2']
+        });
+      }
+      } else if (this.value == 'weekend')  {
+        if (this.checked){
+        timebar.load({
+          columns: [
+            ['data3', 1, 4, 0, 0, 1, 0, 1, 0, 1, 2, 7, 19, 21, 12, 16, 8, 7, 4, 4, 5, 4, 5, 2, 3]
+          ],
+        });
+      } else {
+        timebar.unload({
+          ids: ['data3']
+        });
+      }
+      } else if (this.value == 'total') {
+        if (this.checked){
+          timebar.load({
+            columns: [
+              ['data1', 4, 8, 1, 0, 2, 0, 2, 0, 10, 63, 93, 72, 44, 40, 31, 25, 19, 10, 6, 18, 24, 16, 16, 10]
+            ],
+          });
+        } else {
+          timebar.unload({
+            ids: ['data1']
+          });
+        }
+      }
+});
 
-//Call function to draw the Radar chart
-//Will expect that data is in %'s
-RadarChart.draw("#hours-radar", d, mycfg);
-
-////////////////////////////////////////////
-/////////// Initiate legend ////////////////
-////////////////////////////////////////////
-
-var svg = d3.select('#body')
-	.selectAll('svg')
-	.append('svg')
-	.attr("width", w+300)
-	.attr("height", h)
-
-//Create the title for the legend
-var text = svg.append("text")
-	.attr("class", "title")
-	.attr('transform', 'translate(90,0)')
-	.attr("x", w - 70)
-	.attr("y", 10)
-	.attr("font-size", "12px")
-	.attr("fill", "#404040")
-	.text("Poops per hour of the day");
-
-//Initiate Legend
-var legend = svg.append("g")
-	.attr("class", "legend")
-	.attr("height", 100)
-	.attr("width", 200)
-	.attr('transform', 'translate(90,20)')
-	;
-	//Create colour squares
-	legend.selectAll('rect')
-	  .data(LegendOptions)
-	  .enter()
-	  .append("rect")
-	  .attr("x", w - 65)
-	  .attr("y", function(d, i){ return i * 20;})
-	  .attr("width", 10)
-	  .attr("height", 10)
-	  .style("fill", function(d, i){ return colorscale(i);})
-	  ;
-	//Create text next to squares
-	legend.selectAll('text')
-	  .data(LegendOptions)
-	  .enter()
-	  .append("text")
-	  .attr("x", w - 52)
-	  .attr("y", function(d, i){ return i * 20 + 9;})
-	  .attr("font-size", "11px")
-	  .attr("fill", "#737373")
-	  .text(function(d) { return d; })
-	  ;
-
-
-
+    var timebar = c3.generate({
+        bindto: '#timebar',
+        data: {
+            columns: [
+              ['data1', 4, 8, 1, 0, 2, 0, 2, 0, 10, 63, 93, 72, 44, 40, 31, 25, 19, 10, 6, 18, 24, 16, 16, 10],
+            ],
+            type: 'bar'
+        },
+        axis: {
+        x: {
+          tick: {
+            culling: false
+          }
+        }
+      }
+    });
 });
