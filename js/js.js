@@ -63,26 +63,26 @@ $(document).ready(function() {
   $('.timer').countTo({
     from: 0,
     to: 515,
-    speed: 2000,
+    speed: 1000,
     refreshInterval: 4,
   });
   $('.timer2').countTo({
     from: 0,
     to: 1.41,
-    speed: 2600,
+    speed: 1600,
     refreshInterval: 5,
     decimals: 2,
   });
   $('.timer3').countTo({
     from: 0,
     to: 40,
-    speed: 2300,
+    speed: 1300,
     refreshInterval: 3,
   });
   $('.timer4').countTo({
     from: 0,
     to: 3.89,
-    speed: 2700,
+    speed: 1700,
     refreshInterval: 4,
     decimals: 2,
   });
