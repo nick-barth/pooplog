@@ -59,6 +59,7 @@ $(document).ready(function() {
 
   UncheckAll();
   $(":checkbox[value=total]").prop("checked", "true");
+  $(".month-day").val("month");
 
   $('.timer').countTo({
     from: 0,
@@ -149,7 +150,8 @@ $(document).ready(function() {
       label: {
         format: function(value, ratio, id) {
           return d3.format('s')(value);
-        }
+        },
+        threshold: 0
       }
     }
   });
@@ -313,7 +315,9 @@ $(document).ready(function() {
   var timebar = c3.generate({
     bindto: '#timebar',
     data: {
+      x: 'x',
       columns: [
+        ['x', '12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'],
         ['data1', 4, 8, 1, 0, 2, 0, 2, 0, 10, 63, 93, 72, 44, 40, 31, 25, 19, 10, 6, 18, 24, 16, 16, 10],
       ],
       type: 'bar',
@@ -331,18 +335,19 @@ $(document).ready(function() {
     axis: {
       x: {
         label: {
-               text: 'Time, by Hour',
-               position: 'outer-left'
-           },
+          text: 'Time, by Hour',
+          position: 'outer-left'
+        },
+        type: 'categorized',
         tick: {
           culling: false
-        }
+        },
       },
       y: {
         label: {
-               text: 'Total Poops',
-               position: 'outer-center'
-           }
+          text: 'Total Poops',
+          position: 'outer-center'
+        }
       }
     }
   });
