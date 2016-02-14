@@ -139,12 +139,12 @@ $(document).ready(function() {
         ['3 Poops', 20],
         ['4 Poops', 11],
       ],
-      type: 'donut',
+      type: 'pie',
     },
     color: {
       pattern: ['#594101', '#AD8E3B', '#814F16', '#477187', '#684F91', '#AA9D39']
     },
-    donut: {
+    pie: {
       title: "1b. Poops Per Day",
       label: {
         format: function(value, ratio, id) {
@@ -162,7 +162,7 @@ $(document).ready(function() {
         ['Home', 204],
         ['Other', 57],
       ],
-      type: 'donut',
+      type: 'pie',
       onclick: function(d, i) {
         if (d.id === 'Other') {
           location_pie.load({
@@ -192,7 +192,7 @@ $(document).ready(function() {
     color: {
       pattern: ['#594101', '#AD8E3B', '#814F16', '#477187', '#684F91', '#AA9D39', ]
     },
-    donut: {
+    pie: {
       title: "1a. Poops by Location",
       label: {
         format: function(value, ratio, id) {
@@ -224,7 +224,7 @@ $(document).ready(function() {
         unload: ['data1', 'data2']
       });
       monthly_chart.axis.labels({
-        y2: 'Poops Per Day'
+        y2: 'Average Consistancy'
       });
       monthly_chart.data.names({
         data3: 'Poops Per Day',
@@ -258,7 +258,7 @@ $(document).ready(function() {
         unload: ['data3', 'data4']
       });
       monthly_chart.axis.labels({
-        y2: 'Poops Per Month'
+        y2: 'Average Consistancy'
       });
       monthly_chart.data.names({
         data1: 'Poops Per Month',
@@ -330,9 +330,19 @@ $(document).ready(function() {
     },
     axis: {
       x: {
+        label: {
+               text: 'Time, by Hour',
+               position: 'outer-left'
+           },
         tick: {
           culling: false
         }
+      },
+      y: {
+        label: {
+               text: 'Total Poops',
+               position: 'outer-center'
+           }
       }
     }
   });
