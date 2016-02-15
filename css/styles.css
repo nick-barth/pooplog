@@ -1,61 +1,63 @@
 html {
-  background-color:#fefec8;
+  background-color: #fefec8;
 }
 body {
-  background-color:#fefec8;
+  background-color: #fefec8;
 }
-h1{
-  text-align:center;
-  font-size:48px;
+h1 {
+  text-align: center;
+  font-size: 48px;
 }
-
 .container {
-  background-color:#fefec8;
-  color:#593001;
+  background-color: #fefec8;
+  color: #593001;
   font-family: 'Patrick Hand', cursive;
 }
-
-.titled{
-  text-align:center;
-  font-size:128px;
-  font-weight:bold;
+.titled {
+  text-align: center;
+  font-size: 128px;
+  font-weight: bold;
 }
-.sub-titled{
-  text-align:center;
-  font-size:34px;
-  font-weight:bold;
+.sub-titled {
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
 }
-.quick-nums{
-  text-align:center;
+.quick-nums {
+  text-align: center;
 }
-.big-num{
-  font-size:84px;
-  font-weight:bold;
+.big-num {
+  font-size: 84px;
+  font-weight: bold;
 }
-.big-num-text{
-  font-size:28px;
+.big-num-text {
+  font-size: 28px;
 }
-.notes{
-  font-size:24px;
-}
-.chart-dropdown{
-  font-size:34px;
+.notes {
+  font-size: 24px;
   text-align:center;
 }
-.month-day{
-  margin:auto;
-  width:150px;
+.chart-dropdown {
+  font-size: 34px;
+  text-align: center;
 }
-.radar-chart-serie0{
-  fill:#593001;
+.month-day {
+  margin: auto;
+  width: 150px;
 }
-.radar-chart-serie1{
-  fill:blue;
+.radar-chart-serie0 {
+  fill: #593001;
 }
-.chart-check{
-  text-align:center;
+.radar-chart-serie1 {
+  fill: blue;
 }
-.pie-title{
-  text-align:center;
-  font-size:28px;
+.chart-check {
+  text-align: center;
+}
+.pie-title {
+  text-align: center;
+  font-size: 28px;
+}
+#map {
+  height: 300px;
 }
