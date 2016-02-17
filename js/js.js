@@ -46,8 +46,12 @@
   };
 })(jQuery);
 
+//maybe add heatmap later?
 function initMap() {
-  var myLatLng = {lat: 42.886386, lng:  -78.878176};
+  var myLatLng = {
+    lat: 42.886386,
+    lng: -78.878176
+  };
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
@@ -55,123 +59,176 @@ function initMap() {
   });
 
   var marker = new google.maps.Marker({
-    position: {lat: 42.892424, lng: -78.871549},
+    position: {
+      lat: 42.892424,
+      lng: -78.871549
+    },
     map: map,
     title: 'Town Ballroom',
     icon: 'favicon.ico'
   });
   var marker2 = new google.maps.Marker({
-    position: {lat: 42.915547, lng: -78.889803},
+    position: {
+      lat: 42.915547,
+      lng: -78.889803
+    },
     map: map,
     title: 'Pho Dollar',
     icon: 'favicon.ico'
   });
   var marker3 = new google.maps.Marker({
-    position: {lat: 42.938835, lng:  -78.882346},
+    position: {
+      lat: 42.938835,
+      lng: -78.882346
+    },
     map: map,
     title: 'Wegmans',
     icon: 'favicon.ico'
   });
   var marker4 = new google.maps.Marker({
-    position: {lat: 42.912071, lng: -78.876872},
+    position: {
+      lat: 42.912071,
+      lng: -78.876872
+    },
     map: map,
     title: 'Thirsy Buffalo',
     icon: 'favicon.ico'
   });
   var marker5 = new google.maps.Marker({
-    position: {lat: 42.894570, lng:  -78.868439},
+    position: {
+      lat: 42.894570,
+      lng: -78.868439
+    },
     map: map,
     title: 'Work',
     icon: 'favicon.ico'
   });
   var marker6 = new google.maps.Marker({
-    position: {lat: 42.964949, lng:  -78.772100},
+    position: {
+      lat: 42.964949,
+      lng: -78.772100
+    },
     map: map,
     title: 'Parents',
     icon: 'favicon.ico'
   });
   var marker7 = new google.maps.Marker({
-    position: {lat: 42.911461, lng: -78.877383},
+    position: {
+      lat: 42.911461,
+      lng: -78.877383
+    },
     map: map,
     title: 'Milkies',
     icon: 'favicon.ico'
   });
   var marker8 = new google.maps.Marker({
-    position: {lat: 40.761490, lng: -73.977632},
+    position: {
+      lat: 40.761490,
+      lng: -73.977632
+    },
     map: map,
     title: 'MoMA',
     icon: 'favicon.ico'
   });
   var marker9 = new google.maps.Marker({
-    position: {lat: 43.652580, lng: -79.398615},
+    position: {
+      lat: 43.652580,
+      lng: -79.398615
+    },
     map: map,
     title: 'Chinatown Toronto',
     icon: 'favicon.ico'
   });
   var marker10 = new google.maps.Marker({
-    position: {lat: 41.942873, lng: -87.677510},
+    position: {
+      lat: 41.942873,
+      lng: -87.677510
+    },
     map: map,
     title: 'Chicago',
     icon: 'favicon.ico'
   });
   var marker11 = new google.maps.Marker({
-    position: {lat: 40.437273, lng: -79.980915},
+    position: {
+      lat: 40.437273,
+      lng: -79.980915
+    },
     map: map,
     title: 'Pittsburgh',
     icon: 'favicon.ico'
   });
   var marker12 = new google.maps.Marker({
-    position: {lat: 33.466140, lng: -79.099388},
+    position: {
+      lat: 33.466140,
+      lng: -79.099388
+    },
     map: map,
     title: 'Litchfield Beach',
     icon: 'favicon.ico'
   });
   var marker13 = new google.maps.Marker({
-    position: {lat: 42.923203, lng: -78.876828},
+    position: {
+      lat: 42.923203,
+      lng: -78.876828
+    },
     map: map,
     title: 'Cafe Aroma',
     icon: 'favicon.ico'
   });
   var marker14 = new google.maps.Marker({
-    position: {lat: 42.276178, lng: -78.670873},
+    position: {
+      lat: 42.276178,
+      lng: -78.670873
+    },
     map: map,
     title: 'Madigans',
     icon: 'favicon.ico'
   });
   var marker15 = new google.maps.Marker({
-    position: {lat: 42.827938, lng: -78.696278},
+    position: {
+      lat: 42.827938,
+      lng: -78.696278
+    },
     map: map,
     title: 'Columns',
     icon: 'favicon.ico'
   });
   var marker16 = new google.maps.Marker({
-    position: {lat: 40.757283, lng: -73.965424},
+    position: {
+      lat: 40.757283,
+      lng: -73.965424
+    },
     map: map,
     title: 'NYC Airbnb',
     icon: 'favicon.ico'
   });
   var marker17 = new google.maps.Marker({
-    position: {lat: 42.894987, lng: -78.875933},
+    position: {
+      lat: 42.894987,
+      lng: -78.875933
+    },
     map: map,
     title: 'Buffalo Club',
     icon: 'favicon.ico'
   });
   var marker17 = new google.maps.Marker({
-    position: {lat: 42.903345, lng: -78.873207},
+    position: {
+      lat: 42.903345,
+      lng: -78.873207
+    },
     map: map,
     title: 'CTG',
     icon: 'favicon.ico'
   });
   var marker17 = new google.maps.Marker({
-    position: {lat: 43.021918, lng: -78.687792},
+    position: {
+      lat: 43.021918,
+      lng: -78.687792
+    },
     map: map,
     title: 'Cousins',
     icon: 'favicon.ico'
   });
-
-
-
-
 }
 
 function UncheckAll() {
@@ -184,6 +241,8 @@ function UncheckAll() {
 }
 
 $(document).ready(function() {
+
+  //timers
   UncheckAll();
   $(":checkbox[value=total]").prop("checked", "true");
   $(".month-day").val("month");
@@ -215,6 +274,7 @@ $(document).ready(function() {
     decimals: 2,
   });
 
+  //monthly chart initialization
   var monthly_chart = c3.generate({
     bindto: '#monthly_chart',
     data: {
@@ -257,6 +317,8 @@ $(document).ready(function() {
       }
     }
   });
+
+  //per day initialisation
   var per_day_pie = c3.generate({
     bindto: '#pie2',
     data: {
@@ -282,7 +344,7 @@ $(document).ready(function() {
       }
     }
   });
-
+  // location pie here!!!
   var location_pie = c3.generate({
     bindto: '#pie1',
     data: {
@@ -331,6 +393,8 @@ $(document).ready(function() {
     }
   });
 
+  // month day dropdown change function
+
   $(".month-day").change(function() {
     if ($('.month-day').val() == 'day') {
       monthly_chart.load({
@@ -362,7 +426,7 @@ $(document).ready(function() {
       $('.2a').hide();
       $('.2b').show();
 
-
+      // ELSE MONTH BABY
     } else {
       monthly_chart.load({
         columns: [
@@ -397,7 +461,9 @@ $(document).ready(function() {
       $('.2a').show();
     }
   });
+ //checkbox change function
 
+ //TODO: figure out what to do with nothing clicked? Leave it blank?
   $(".checkbox").change(function() {
 
     if (this.value == 'weekday') {
@@ -439,6 +505,7 @@ $(document).ready(function() {
     }
   });
 
+//woahhhh time bar graph here, i supposse its actually a histogram.
   var timebar = c3.generate({
     bindto: '#timebar',
     data: {
