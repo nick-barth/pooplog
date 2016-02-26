@@ -381,7 +381,7 @@ $(document).ready(function() {
       },
     },
     color: {
-      pattern: ['#594101', '#AD8E3B', '#814F16', '#477187', '#684F91', '#AA9D39', ]
+      pattern: ['#402800','#594101', '#8C7434', '#BFA767', '#F2DA9A', '#FFFFCD']
     },
     pie: {
       title: "1a. Poops by Location",

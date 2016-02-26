@@ -1,5 +1,7 @@
 html {
   background-color: #fefec8;
+  color: #593001;
+  font-family: 'Patrick Hand', cursive;
 }
 body {
   background-color: #fefec8;
@@ -72,4 +74,9 @@ h1 {
 }
 select.month-day {
   margin-top: 15px;
+}
+
+.end-note{
+  font-size:12px;
+  text-align:center;
 }
